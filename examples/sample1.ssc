@@ -82,12 +82,6 @@ for x = 0 to 1920 step 10
      DrawPixel "Red",10,x,y    
 
 }
-// sleep 5s
-println "Sleeping 5 seconds and then clearing canvas"
-sleep 5000 
-ClearCanvas
-println "Canvas cleared"
-}
 
 double(x)
 {
