@@ -15,7 +15,6 @@ namespace Katana
         public Form1()
         {
             InitializeComponent();
-            // form1 = this;
 
         }
 

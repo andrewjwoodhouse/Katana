@@ -35,9 +35,6 @@ namespace Katana
         private void Form2_Load(object sender, EventArgs e)
         {
 
-            // Console.WriteLine("source file: " + mySourceFile);
-            
-
         }
 
 
@@ -273,7 +270,7 @@ namespace Katana
                 case "Println":
                     string resultText1 = string.Join("", e.Parameters.Select(p => p.ToString()));
                     KatanaForm.form3.programOutputText.AppendText(resultText1 + "\n");
-                    //KatanaForm.form3.Show();
+                    
                     break;
                 case "TextColor": // set fg/bg for our text output
                     string foreColorStr = e.Parameters[0].ToString();
@@ -319,8 +316,7 @@ namespace Katana
                     };
                     DrawLine(colorStr, swidth, points);
                     break;
-                case "DrawPixel":
-                    // DrawPixel(string coordinate system, pagescale, ccolor, int x, int y,xscaling,xscaling)
+                case "DrawPixel":                    
                     string pixelColor = e.Parameters[0].ToString();
                     int size = e.Parameters[1].ToInteger();
                     int pixelx = e.Parameters[2].ToInteger();
@@ -345,7 +341,6 @@ namespace Katana
                     DrawEllipse(colorStrEllipse, ewidth,ex1,ey1,ex2,ey2);
                     break;
                 case "DrawFilledCircle":
-                    // DrawFilledCircle(string color, int centerX, int centerY, int radius)
                     string colorFillCircle = e.Parameters[0].ToString();                   
                     int centerx1 = e.Parameters[1].ToInteger();
                     int centery2 = e.Parameters[2].ToInteger();
@@ -364,7 +359,6 @@ namespace Katana
                     List<PointF> curvePointList = new List<PointF>();
                     for (int i = 2; i < numPoints; i=i+2)
                     {
-                        // Console.WriteLine("loop counter (i): " + i);
                         double pointx = e.Parameters[i].ToFloat();
                         float fpointx = (float)pointx;
                         double pointy = e.Parameters[i+1].ToFloat();
@@ -374,14 +368,12 @@ namespace Katana
                     DrawCurve(colorStrCurve, curvewidth, curvePointList);
                     break;
                 case "DrawPolygon":
-                    // DrawPolygon(string color, int width, List<PointF> myPolyPointList)
                     string colorStrPoly = e.Parameters[0].ToString();
                     int polywidth = e.Parameters[1].ToInteger();                   
                     int numPolyPoints = e.Parameters.Length;
                     List<PointF> polyPointList = new List<PointF>();
                     for (int i = 2; i < numPolyPoints; i = i + 2)
                     {
-                        // Console.WriteLine("loop counter (i): " + i);
                         double pointx = e.Parameters[i].ToFloat();                        
                         float fpointx = (float)pointx;
                         Console.WriteLine("x: " + fpointx.ToString());
@@ -393,13 +385,11 @@ namespace Katana
                     DrawPolygon(colorStrPoly, polywidth, polyPointList);
                     break;
                 case "DrawFilledPolygon":
-                    // DrawPolygon(string color, List<PointF> myPolyPointList)
                     string colorStrPoly1 = e.Parameters[0].ToString();
                     int numPolyPoints1 = e.Parameters.Length;
                     List<PointF> polyPointList1 = new List<PointF>();
                     for (int i = 1; i < numPolyPoints1; i = i + 2)
                     {
-                        // Console.WriteLine("loop counter (i): " + i);
                         double apointx = e.Parameters[i].ToFloat();
                         float afpointx = (float)apointx;
                         double apointy = e.Parameters[i + 1].ToFloat();
@@ -409,7 +399,6 @@ namespace Katana
                     DrawFilledPolygon(colorStrPoly1, polyPointList1);
                     break;
                 case "DrawText":
-                    // DrawText(string color, string fontString, float x, float y, string textToDraw)
                     string colorStrText = e.Parameters[0].ToString();
                     string fontString = e.Parameters[1].ToString();
                     double textxd = e.Parameters[2].ToFloat();
