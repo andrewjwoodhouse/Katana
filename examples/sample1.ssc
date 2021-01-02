@@ -44,7 +44,7 @@ println string("*", 78)
     println "  50 / (2 + 3) = ", 50 / (2 + 3)
     println "  (2 + 7) * (2 * (8 + double(5) * (100 + triple(7)))) = ", (2 + 7) * (2 * (8 + double(5) * (100 + triple(7))))
     println
-sleep 5000 
+
     // Characters
     println "Characters:"
     for i = 48 to 126
@@ -55,7 +55,6 @@ sleep 5000
     println "Array Elements:"
     for i = 1 to len(array)
         println "  \"" & array[i] & "\""
-    sleep 5000
 
 // Print each element in array to our debug console
     debug "Array Elements:"
@@ -77,10 +76,11 @@ for x = 1 to 1920 step 100
 
 for x = 0 to 1920 step 10
 {    
-     y=(Abs(Sin(x))*80)+500
+     y=(Abs(Sin(x))*20)+500
      // println x & " " & y 
      DrawPixel "Red",10,x,y    
 
+}
 }
 
 double(x)

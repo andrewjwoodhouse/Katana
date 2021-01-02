@@ -1,7 +1,7 @@
 main()
 {
 	println "Drawing Katana supported graphics primitives on graphic canvas"
-	uiMsg "This is a UI Message from Katana. Press OK to continue","Katana uiMsg"
+	// uiMsg "This is a UI Message from Katana. Press OK to continue","Katana uiMsg"
 	println "Primitives are: Line, Text, Circle, FilledCircle, Ellipse, Polygon, Filled Polygon, Curve, Pixel"
 	DrawLine "Black",1,100,50,200,50
 	DrawText "Black","Consolas, 10",150,30,"Line"
@@ -16,11 +16,5 @@ main()
 	{ 
 	 DrawPixel "Black",1,x,600
 	}
-	println "Sleeping 10 seconds..."
-	sleep 10
-	println "Clearing everything in 5 seconds..."
-	sleep 5
-	ClearCanvas
-	ClearText
-	println "Done!"
+
 }
