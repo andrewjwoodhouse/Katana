@@ -69,6 +69,7 @@ namespace Katana
             compiler.RegisterFunction("ClearText", 0, 0);
             compiler.RegisterFunction("ClearCanvas", 0, 0);
             compiler.RegisterFunction("Sleep", 1, 1);
+            compiler.RegisterFunction("CanvasBackgroundColor", 1, 1);
 
             Console.WriteLine("Functions registered!");
 
@@ -134,6 +135,13 @@ namespace Katana
         {
             Graphics g = KatanaForm.form2.CreateGraphics();
             g.Clear(Color.White);            
+        }
+
+        public static void CanvasBackgroundColor(string bgcolor)
+        {
+            Color myBgColor = System.Drawing.ColorTranslator.FromHtml(bgcolor);
+            Graphics g = KatanaForm.form2.CreateGraphics();
+            g.Clear(myBgColor);
         }
 
         public static void DrawText(string color, string fontString, float x, float y, string textToDraw)
@@ -286,6 +294,10 @@ namespace Katana
                     break;
                 case "ClearCanvas":
                     ClearCanvas();
+                    break;
+                case "CanvasBackgroundColor":
+                    string bgcolor = e.Parameters[0].ToString();
+                    CanvasBackgroundColor(bgcolor);
                     break;
                 case "Sleep":
                     int sleepTime = e.Parameters[0].ToInteger();
