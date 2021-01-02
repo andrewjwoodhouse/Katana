@@ -52,6 +52,7 @@ TextColor "Green","Black"
 
 "ClearText" - clear the output window
 "ClearCanvas" - clear the graphic canvas
+
 "CanvasBackgroundColor" - set the graphic canvas background color to that specified. Example:
 CanvasBackgroundColor(Black)
 
