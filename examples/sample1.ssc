@@ -1,0 +1,104 @@
+///////////////////////////////////////////////////////////////
+// Silk - Sample script
+//
+// Use with Katana to display capabilities
+//
+
+
+// Variables declared here are global to all functions
+var array = { 20, 30, "abc", 40, "def", 50, [5], { 1, 2, 3 } }
+
+main()
+{  
+// clear canvas and text output window
+ClearText
+ClearCanvas
+
+
+TextColor "Green","Black"
+SetFont "Consolas, 10"
+println string("*", 78)
+println "* SILK Example Program"
+println string("*", 78)
+    
+    // Print local array
+    months = {
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    }
+    println "Months: ", months
+    
+    // Expressions
+    println "Expressions:"
+    println "  2 + 2 = ", 2 + 2
+    println "  50 / (2 + 3) = ", 50 / (2 + 3)
+    println "  (2 + 7) * (2 * (8 + double(5) * (100 + triple(7)))) = ", (2 + 7) * (2 * (8 + double(5) * (100 + triple(7))))
+    println
+sleep 5000 
+    // Characters
+    println "Characters:"
+    for i = 48 to 126
+        print chr(i)
+    println
+    
+    // Print each element in array to our window
+    println "Array Elements:"
+    for i = 1 to len(array)
+        println "  \"" & array[i] & "\""
+    sleep 5000
+
+// Print each element in array to our debug console
+    debug "Array Elements:"
+    for i = 1 to len(array)
+        debug "  \"" & array[i] & "\""
+    
+
+
+Println "Now drawing to the graphics window..."
+for x = 1 to 1920 step 100
+{
+    for y = 1 to 1080 step 100
+    {
+     DrawPixel "Black",10,x,y    
+     DrawCircle "Blue", 1, x,y,10
+     DrawText "Green","Microsoft Himalaya, 8",x+10,y+10, x & " " & y     
+    }
+}
+
+for x = 0 to 1920 step 10
+{    
+     y=(Abs(Sin(x))*80)+500
+     // println x & " " & y 
+     DrawPixel "Red",10,x,y    
+
+}
+// sleep 5s
+println "Sleeping 5 seconds and then clearing canvas"
+sleep 5000 
+ClearCanvas
+println "Canvas cleared"
+}
+
+double(x)
+{
+    return x * 2
+}
+
+triple(x)
+{
+    return x * 3
+}
+
+
+
+
