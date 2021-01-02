@@ -52,6 +52,9 @@ TextColor "Green","Black"
 
 "ClearText" - clear the output window
 "ClearCanvas" - clear the graphic canvas
+"CanvasBackgroundColor" - set the graphic canvas background color to that specified. Example:
+CanvasBackgroundColor(Black)
+
 "Sleep" - sleep for the period specified (in milliseconds - e.g. sleep(5000) sleeps for 5s)
 
 
