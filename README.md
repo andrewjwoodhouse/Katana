@@ -25,3 +25,5 @@ Implemented functions are:
              "Sleep"
 
 
+See examples for some sample scripts.
+
