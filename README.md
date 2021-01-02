@@ -1,7 +1,7 @@
 #Katana
 
 This is a simple project that uses Silk (https://github.com/SoftCircuits/Silk) to provide a simple 
-scripting in a c# windows forms application. Katana supports primtive graphics in addition to the Silk functions documented on the linked Silk page.
+scripting in a c# windows forms application. Katana supports primtive graphics in addition to the Silk functions documented at https://github.com/SoftCircuits/Silk/blob/master/docs/InternalFunctions.md
 
 Implemented functions are:
 
